@@ -1,21 +1,12 @@
 @echo off
+for /F "tokens=*" %%I in (Comfig.ini) do set %%I
 cls
-
-::language setup change to yours
-set lang=english
-
-::Funny folder name chnage it for whaterver you want
-set foldername=_VPKMODFIX
-
-::Automation vaule 1 = cache remover 2 = mod fix 0 = your choice(default one)
-set AutoVaule=0
-
-IF NOT EXIST "..\..\tf_win64.exe" (goto :Err01) else (goto :fastcheck)
+IF NOT EXIST "..\..\..\tf_win64.exe" (goto :Err01) else (goto :fastcheck)
 
 :Err01
 color c
-echo Error: err01 (Program is not in CUSTOM folder) 
-echo Please put program in custom folder and open it again.
+echo Error: err01 (Folder is not in CUSTOM folder) 
+echo Please put folder in custom folder and open it again.
 pause
 exit
 
@@ -45,13 +36,7 @@ del /F /S *.cache
 goto :end
 
 :modfix
-IF NOT EXIST "%foldername%/resource" (goto :nofolder) else (goto :Copy)
-
-:nofolder
-set /P c=Resource mod folder was not found. Create one? [Y or N]
-if /I %c% EQU Y goto :makefolder
-if /I %c% EQU N goto :FUCKYOU
-
+IF NOT EXIST "%foldername%/resource" (goto :makefolder) else (goto :Copy)
 
 :makefolder
 mkdir "%foldername%/resource"
@@ -70,7 +55,4 @@ echo Finished!
 echo orginal code by panicq and HammerHead133
 echo edited by kapi6921 with polish super glue
 pause
-exit
-
-:FUCKYOU
 exit

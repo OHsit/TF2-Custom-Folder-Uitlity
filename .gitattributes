@@ -2,6 +2,7 @@
 * text=auto
 
 *.bat eol=crlf
+*.sh eol=crlf
 
 # Do not export these files on download
 .gitattributes export-ignore
