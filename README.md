@@ -11,7 +11,7 @@ TF2 custom folder Utilty (in short TCFU) was created for makeing some of the tas
 - Language setting for mod limit fixer
 
 ---
-## Instaltion
+## Instalation
 See [Releases](https://github.com/OHsit/TF2-Custom-Folder-Uitlity/releases) and download the latest version for Windows
 Unpack the zip
 Put the folder in the custom folder and run .bat file
